@@ -29,9 +29,26 @@ const fillBombs = (cells: string[], bombs: number):string[] => {
 const Board = (props: BoardProps) => {
     const cells: string[] = Array(props.rows*props.rows).fill('');
     fillBombs(cells, props.bombs);
+    const board: string[][] = [];
+    for (let i = 0; i < props.rows; i++) {
+        board.push(cells.slice(i,i+props.rows))
+    }
+    console.log(board);
+    
     return (
         <div>
             <h1>Board</h1>
+            <section>
+                {
+                    board.map((row) => (
+                        <div className="row">
+                            {row.map(cell => (
+                                <div>{cell ? cell : '🚩'}</div>
+                            ))}    
+                        </div>
+                    ))
+                }
+            </section>
         </div>
     );
 };
