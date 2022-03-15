@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Counter bombsLeft={10} time={60}/>
-      <Board rows={5} bombs={10}/>
+      <Board rows={10} bombs={10}/>
     </div>
   );
 }

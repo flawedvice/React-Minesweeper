@@ -5,7 +5,11 @@ interface CounterProps {
 }
 const Counter = (props: CounterProps) => {
     return (
-        <h1>Counter</h1>
+        <section id="counter-bar">
+            <h2>💣: {props.bombsLeft}</h2>
+            <button id="reset-btn">Reset</button>
+            <h2>⏱️: {props.time}</h2>
+        </section>
     );
 };
 
